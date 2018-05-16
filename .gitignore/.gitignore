@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp_date_calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the first date mm/dd/yyyy");
+            string d1 = Console.ReadLine();
+            Console.WriteLine("Enter the 2nd date mm/dd/yyyy");
+            string d2 = Console.ReadLine();
+            string[] sp1 = d1.Split('/');
+            string[] sp2 = d2.Split('/');
+            DateTime date1 = new DateTime(int.Parse(sp1[2]), int.Parse(sp1[0]), int.Parse(sp1[1]));
+            DateTime date2 = new DateTime(int.Parse(sp2[2]), int.Parse(sp2[0]), int.Parse(sp2[1]));
+            TimeSpan diff = date1 - date2;
+            Console.WriteLine("Difference is " + diff.Days + " days " + diff.Hours + " Hours " + diff.Minutes + " Minutes ");
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
